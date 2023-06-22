@@ -1,17 +1,62 @@
 package ua.markonomikon.api.service;
 
-import jakarta.ws.rs.core.Context;
-import jakarta.ws.rs.core.UriInfo;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import ua.markonomikon.api.management.AppConstants;
 
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
+import jakarta.ws.rs.core.UriInfo;
+import java.io.Serializable;
 import java.text.MessageFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ResponseService {
+
+public abstract class RsResponseService implements Serializable {
+
+
     private static final long serialVersionUID = 1L;
     @Context
     UriInfo ui;
+
+    public static Response jsonResponse(Map<String, String> toJson, Status status) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonStr = "";
+        try {
+            jsonStr = objectMapper.writeValueAsString(toJson);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return Response.status(status).entity(jsonStr).build();
+    }
+
+    public static Response jsonResponse(Status status, String key, Object value) {
+        Map<String, String> toJson = new HashMap<String, String>();
+        toJson.put(key, value.toString());
+        return jsonResponse(toJson, status);
+    }
+
+    public static Response jsonMessageResponse(Status status, Object object) {
+        if (object instanceof Throwable t) {
+            return jsonResponse(status, AppConstants.JSON_GENERIC_MESSAGE_KEY, getErrorMessage(t));
+        } else {
+            return jsonResponse(status, AppConstants.JSON_GENERIC_MESSAGE_KEY, String.valueOf(object));
+
+        }
+    }
+
+    public static Response jsonErrorMessageResponse(Object error) {
+        if (error instanceof Throwable t) {
+            return jsonResponse(Status.INTERNAL_SERVER_ERROR, AppConstants.JSON_GENERIC_MESSAGE_KEY, getErrorMessage(t));
+        } else {
+            return jsonResponse(Status.INTERNAL_SERVER_ERROR, AppConstants.JSON_GENERIC_MESSAGE_KEY, String.valueOf(error));
+        }
+    }
 
     private static String getErrorMessage(Throwable t) {
         String exceptionClass = t.getClass().getCanonicalName();
@@ -101,4 +146,5 @@ public class ResponseService {
     protected String likeParamR(String param) {
         return get(param) + "%";
     }
+
 }

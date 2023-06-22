@@ -1,6 +1,7 @@
 package ua.markonomikon.api.management;
 
 public class AppConstants {
+
     public static final String API_PATH = "/api";
     public static final String EMAIL_SEPARATOR = ";|,";
 
@@ -16,4 +17,5 @@ public class AppConstants {
     public static final String AND_CLAUSE = " and ";
     public static final String OR_CLAUSE = " or ";
     public static final String ORDER_BY_CLAUSE = " order by ";
+
 }

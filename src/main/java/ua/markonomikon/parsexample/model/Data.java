@@ -21,4 +21,13 @@ public class Data extends PanacheEntityBase {
     public String uuid;
     public String data_to_parse;
     public LocalDateTime received_date;
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "uuid='" + uuid + '\'' +
+                ", data_to_parse='" + data_to_parse + '\'' +
+                ", received_date=" + received_date +
+                '}';
+    }
 }

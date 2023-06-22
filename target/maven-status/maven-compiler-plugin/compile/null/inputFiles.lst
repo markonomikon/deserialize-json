@@ -1,0 +1,11 @@
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/parsexample/model/Data.java
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/api/management/AppConstants.java
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/parsexample/GreetingResource.java
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/api/filter/CorsFilter.java
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/parsexample/service/util/DataUtil.java
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/api/producer/CorsExceptionMapper.java
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/parsexample/management/AppConstants.java
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/api/service/RsRepositoryServiceV3.java
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/api/service/RsResponseService.java
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/api/util/DateUtils.java
+/home/markozvarych/ProjectsIct/parse-xample/src/main/java/ua/markonomikon/parsexample/service/rs/DataServiceResource.java

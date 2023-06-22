@@ -29,8 +29,6 @@ public abstract class RsRepositoryServiceV3<T extends PanacheEntityBase, U> exte
     protected Logger logger = Logger.getLogger(getClass());
     @Inject
     EntityManager entityManager;
-    @Inject
-    SecurityIdentity securityIdentity;
     private Class<T> entityClass;
 
     public RsRepositoryServiceV3(Class<T> entityClass) {
@@ -46,10 +44,6 @@ public abstract class RsRepositoryServiceV3<T extends PanacheEntityBase, U> exte
 
     protected EntityManager getEntityManager() {
         return entityManager;
-    }
-
-    protected SecurityIdentity getCurrentUser() {
-        return securityIdentity;
     }
 
     protected void prePersist(T object) throws Exception {

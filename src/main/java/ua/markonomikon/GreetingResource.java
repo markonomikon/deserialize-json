@@ -1,4 +1,4 @@
-package org.acme;
+package ua.markonomikon;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

@@ -1,4 +1,4 @@
-package org.acme;
+package ua.markonomikon;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 

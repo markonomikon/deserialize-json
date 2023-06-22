@@ -13,7 +13,9 @@ import ua.markonomikon.parsexample.model.Data;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-@Path("/data")
+import static ua.markonomikon.parsexample.management.AppConstants.DATA_PATH;
+
+@Path(DATA_PATH)
 public class DataResource extends RepositoryService<Data, String> {
 
     /*
@@ -43,6 +45,8 @@ public class DataResource extends RepositoryService<Data, String> {
         data.data_to_parse = jsonObject.toString();
         data.received_date = LocalDateTime.now();
         data.persist();
+
+        Log.info("persisted: " + data);
     }
 
 }

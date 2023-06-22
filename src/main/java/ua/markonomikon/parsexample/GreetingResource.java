@@ -1,4 +1,4 @@
-package ua.markonomikon;
+package ua.markonomikon.parsexample;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

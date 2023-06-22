@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  postgresql:
+    container_name: parse-xample
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: parse-xample
+    ports:
+      - 5432:5432

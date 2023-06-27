@@ -52,6 +52,34 @@ String day = rootNode.get("dateofbirth").get(0).get("day").asText();
 String month = rootNode.get("dateofbirth").get(0).get("month").asText();
 String year = rootNode.get("dateofbirth").get(0).get("year").asText();
 ```
+or we can directly populate an object like follows:
+```
+public class Person {
+    public String name;
+    public String surname;
+    public LocalDate dateofbirth;
+}
+
+public static void newPerson(String jsonString){
+    //create a new person instance
+    Person person = new Person();
+    
+    person.name = rootNode.get("name").asText();
+    person.surname = rootNode.get("surname").asText();
+    
+    //date of birth
+    String day = rootNode.get("dateofbirth").get(0).get("day").asText();
+    String month = rootNode.get("dateofbirth").get(0).get("month").asText();
+    String year = rootNode.get("dateofbirth").get(0).get("year").asText();
+    
+    //convert the strings into LocalDate object
+    LocalDate date = LocalDate.of(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
+    person.dateofbirth = date;
+    
+    //persist the new person
+    person.persist();
+}
+```
 
 ### JsonProperty
 JsonProperty is an annotation used to define the mapping between JSON property names and Java object fields or methods. Key points:
@@ -65,18 +93,48 @@ JsonProperty is an annotation used to define the mapping between JSON property n
 let's suppose we have this JSON:
 ```
 {
-    "from":"Marty",
-    "to":"Doc"
+    "name":"Timon",
+    "surname":"Pumba",
+    "dateofbirth":
+        {
+        "day":"30",
+        "month":"12",
+        "year":"1995"
+        }
 }
 ```
 we'll use the JsonProperty annotation like follows:
 ```
-public class Metadata(){
+public class Person {
 
-        @JsonProperty("from")
-        public String from_name;
+        @JsonProperty("name")
+        public String name;
         
-        @JsonProperty("to") 
-        public String to_name;
+        @JsonProperty("surname") 
+        public String surname;
+        
+        @JsonProperty("dateofbirth") 
+        public Birthday birthday;
 }
+```
+```
+public record Birthday(
+        @JsonProperty("day") 
+        String day,
+        
+        @JsonProperty("month") 
+        String month,
+        
+        @JsonProperty("year") 
+        String year
+) {}
+```
+now we map the JSON data to Person object and persist it:
+```
+        String jsonString = "{\"name\":\"Timon\",\"surname\":\"Pumba\",\"dateofbirth\":{\"day\":\"30\","month\":\"12\",\"year\":\"1995\"}}";
+        
+        ObjectMapper objectMapper = new ObjectMapper();        
+        Person person = objectMapper.readValue(jsonString, Person.class);   
+           
+        person.persist();
 ```

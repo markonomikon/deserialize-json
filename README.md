@@ -22,6 +22,37 @@ Steps using JsonNode:
 - Accessing Data: Once you have the JsonNode object, you can traverse the JSON structure by accessing child nodes, retrieving field values, or iterating over array elements.
 - Manipulating Data: If you need to modify the JSON data, you create a new JsonNode object with the desired changes. This can involve adding or removing fields, updating values, or restructuring the JSON tree.
 - Serializing JSON: Finally, when you want to convert the modified JsonNode back to a JSON string, you use the library's serialization functionality to generate the updated JSON representation.
+#### example use of JsonNode:
+let's suppose we have this JSON:
+```
+{
+    "name":"Timon",
+    "surname":"Pumba",
+    "dateofbirth":
+        {
+        "day":"30",
+        "month":"12",
+        "year":"1995"
+        }
+}
+```
+we'll use the JsonNode like follows:
+```
+String jsonString = "{\"name\":\"Timon\",\"surname\":\"Pumba\",\"dateofbirth\":{\"day\":\"30\","month\":\"12\",\"year\":\"1995\"}}";
+
+ObjectMapper objectMapper = new ObjectMapper();
+JsonNode rootNode = objectMapper.readTree(jsonString);
+
+//name & surname
+String name = rootNode.get("name").asText();
+String surname = rootNode.get("surname").asText();
+
+//date of birth
+String day = rootNode.get("dateofbirth").get(0).get("day").asText();
+String month = rootNode.get("dateofbirth").get(0).get("month").asText();
+String year = rootNode.get("dateofbirth").get(0).get("year").asText();
+```
+
 ### JsonProperty
 JsonProperty is an annotation used to define the mapping between JSON property names and Java object fields or methods. Key points:
 
@@ -30,8 +61,8 @@ JsonProperty is an annotation used to define the mapping between JSON property n
 - Serialization: Similarly, when serializing Java objects into JSON, you can use JsonProperty to define the name of the JSON property that should be used to represent a specific field or method in the Java object. This allows you to customize the JSON property names according to your requirements.
 - Usage: JsonProperty is typically used as a decorator or annotation in programming languages that support annotations, such as Java. By applying the JsonProperty annotation to a field or method, you can specify the desired JSON property name.
 
-#### example use of JsonProperty annotation
-let's suppose we have this sad JSON:
+#### example use of JsonProperty annotation:
+let's suppose we have this JSON:
 ```
 {
     "from":"Marty",

@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="parse-xampler" />
+        <module name="parse-json-with-jackson" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="parse-json-with-jackson" options="-parameters" />
       <module name="parse-xampler" options="-parameters" />
     </option>
   </component>

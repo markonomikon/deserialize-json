@@ -31,4 +31,21 @@ JsonProperty is an annotation used to define the mapping between JSON property n
 - Usage: JsonProperty is typically used as a decorator or annotation in programming languages that support annotations, such as Java. By applying the JsonProperty annotation to a field or method, you can specify the desired JSON property name.
 
 #### example use of JsonProperty annotation
+let's suppose we have this sad JSON:
+```
+{
+    "from":"Marty",
+    "to":"Doc"
+}
+```
+we'll use the JsonProperty annotation like follows:
+```
+public class Metadata(){
 
+        @JsonProperty("from")
+        public String from_name;
+        
+        @JsonProperty("to") 
+        public String to_name;
+}
+```

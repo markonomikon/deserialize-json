@@ -3,9 +3,6 @@ package ua.markonomikon.api.service;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.panache.common.Sort;
-import io.quarkus.security.identity.SecurityIdentity;
-import org.jboss.logging.Logger;
-
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
@@ -15,6 +12,8 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import jakarta.ws.rs.core.UriInfo;
+import org.jboss.logging.Logger;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;

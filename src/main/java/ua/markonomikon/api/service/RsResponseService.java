@@ -2,12 +2,12 @@ package ua.markonomikon.api.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ua.markonomikon.api.management.AppConstants;
-
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import jakarta.ws.rs.core.UriInfo;
+import ua.markonomikon.api.management.AppConstants;
+
 import java.io.Serializable;
 import java.text.MessageFormat;
 import java.util.HashMap;

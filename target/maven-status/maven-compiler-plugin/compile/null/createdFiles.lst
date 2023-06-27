@@ -1,3 +1,4 @@
+ua/markonomikon/parsexample/model/ParsedData.class
 ua/markonomikon/api/filter/CorsFilter.class
 ua/markonomikon/parsexample/service/rs/DataServiceResource.class
 ua/markonomikon/parsexample/service/util/DataUtil.class
@@ -9,4 +10,5 @@ ua/markonomikon/api/service/RsResponseService.class
 ua/markonomikon/parsexample/model/Data.class
 META-INF/panache-archive.marker
 ua/markonomikon/api/producer/CorsExceptionMapper.class
+ua/markonomikon/parsexample/service/timer/DataParser.class
 ua/markonomikon/api/management/AppConstants.class

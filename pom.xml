@@ -44,6 +44,11 @@
       <artifactId>queryable-maven-plugin</artifactId>
       <version>1.0.14</version>
     </dependency>
+<!--SCHEDULER-->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-scheduler</artifactId>
+    </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-arc</artifactId>

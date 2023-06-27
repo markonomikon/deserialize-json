@@ -1,4 +1,4 @@
-# parse-xample
+# Parse JSON using Jackson
 is a simple example of how to deserialize JSON using Jackson. The project is in 
 java using Quarkus framework. You can find 2 ways of deserializing:
 

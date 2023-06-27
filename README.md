@@ -54,12 +54,15 @@ String year = rootNode.get("dateofbirth").get(0).get("year").asText();
 ```
 or we can directly populate an object like follows:
 ```
+//our object
 public class Person {
     public String name;
     public String surname;
     public LocalDate dateofbirth;
 }
-
+```
+```
+@Transactional
 public static void newPerson(String jsonString){
     //create a new person instance
     Person person = new Person();
@@ -91,6 +94,7 @@ JsonProperty is an annotation used to define the mapping between JSON property n
 
 #### example use of JsonProperty annotation:
 let's suppose we have this JSON:
+
 ```
 {
     "name":"Timon",
@@ -105,6 +109,7 @@ let's suppose we have this JSON:
 ```
 we'll use the JsonProperty annotation like follows:
 ```
+//our object with annotated field's
 public class Person {
 
         @JsonProperty("name")
@@ -118,6 +123,7 @@ public class Person {
 }
 ```
 ```
+//our object contained inside Person object
 public record Birthday(
         @JsonProperty("day") 
         String day,

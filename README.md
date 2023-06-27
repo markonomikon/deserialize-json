@@ -1,9 +1,9 @@
 # Parse JSON using Jackson
-is a simple example of how to deserialize JSON using Jackson. The project is in 
-java using Quarkus framework. You can find 2 ways of deserializing:
+is a simple example of how to deserialize JSON using [Jackson](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core). The project is in 
+java using [Quarkus](https://quarkus.io/) framework. You can find 2 ways of deserializing:
 
-- using JsonNode
-- using JsonProperty annotation
+- using [JsonNode](#jsonnode)
+- using [JsonProperty annotation](#jsonproperty)
 
 ### JsonNode
 JsonNode refers to a data structure used to represent and manipulate JSON 

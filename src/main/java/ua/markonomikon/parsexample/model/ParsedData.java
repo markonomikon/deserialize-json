@@ -1,12 +1,11 @@
 package ua.markonomikon.parsexample.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * entity containing received data that has been parsed and processed.
+ * ENTITY: containing received data that has been parsed and processed.
  * - String 'object': "object" field of received data.
  * - String 'id': "id" field of received data.
  * - String 'sender_phone_number': "sender_phone_number" field of received data.

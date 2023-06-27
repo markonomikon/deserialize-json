@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "dd46eeb5-1887-42f4-9361-3697deeb80f1",
+		"name": "parse-xample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27753746"
+	},
+	"item": [
+		{
+			"name": "Data list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/data/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"data",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parsed Data list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/parsed_data/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parsed_data",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data parse & persist TIMER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"object\":\"message\",\n    \"entry\":\n        [\n            {\n            \"id\":\"100253349659316\",\n            \"metadata\":\n                [\n                    {\n                    \"from\":\n                        {\n                        \"number\":\"3895412487\",\n                        \"name\":\"Black\",\n                        \"surname\":\"Jack\"\n                        },\n                    \"to\":\n                        {\n                        \"number\":\"0898234769\",\n                        \"name\":\"Mick\",\n                        \"surname\":\"Mack\"\n                        }\n                    }\n                ]         \n            }\n        ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/data/entry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"data",
+						"entry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Direct parse & persist NO TIMER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"object\":\"message\",\n    \"entry\":\n        [\n            {\n            \"id\":\"100253349659316\",\n            \"metadata\":\n                [\n                    {\n                    \"from\":\n                        {\n                        \"number\":\"3895412487\",\n                        \"name\":\"Black\",\n                        \"surname\":\"Jack\"\n                        },\n                    \"to\":\n                        {\n                        \"number\":\"0898234769\",\n                        \"name\":\"Mick\",\n                        \"surname\":\"Mack\"\n                        }\n                    }\n                ]         \n            }\n        ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/data/entry_no_scheduler",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"data",
+						"entry_no_scheduler"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data parse & persist DATAEVENT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"object\":\"message\",\n    \"entry\":\n        [\n            {\n            \"id\":\"100253349659316\",\n            \"metadata\":\n                [\n                    {\n                    \"from\":\n                        {\n                        \"number\":\"3895412487\",\n                        \"name\":\"Black\",\n                        \"surname\":\"Jack\"\n                        },\n                    \"to\":\n                        {\n                        \"number\":\"0898234769\",\n                        \"name\":\"Mick\",\n                        \"surname\":\"Mack\"\n                        }\n                    }\n                ]         \n            }\n        ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/json_data/entry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"json_data",
+						"entry"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

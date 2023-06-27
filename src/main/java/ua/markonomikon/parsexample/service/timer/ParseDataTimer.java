@@ -3,17 +3,22 @@ package ua.markonomikon.parsexample.service.timer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.quarkus.logging.Log;
 import io.quarkus.scheduler.Scheduled;
-import jakarta.inject.Singleton;
 import jakarta.inject.Inject;
-import ua.markonomikon.parsexample.model.Data;
+import jakarta.inject.Singleton;
+import ua.markonomikon.parsexample.model.jsonodes.Data;
 import ua.markonomikon.parsexample.service.util.DataUtil;
 
 import java.util.List;
 
 import static org.wildfly.common.Assert.assertTrue;
 
+/**
+ * TIMER: that lists all 'Data' objects every 30 seconds and parse the 'data_to_parse' field content using JsonNode.
+ * Once the data is parsed, it is used to populate an instance of 'ParsedData' which is persisted.
+ */
+
 @Singleton
-public class DataParser {
+public class ParseDataTimer {
     @Inject
     ObjectMapper objectMapper;
 
@@ -23,9 +28,9 @@ public class DataParser {
      * =======================================
      */
 
-    @Scheduled(every = "5s", concurrentExecution = Scheduled.ConcurrentExecution.SKIP)
-    public void parseData(){
-        Log.info("ParseData: RUNNING");
+    @Scheduled(every = "30s", concurrentExecution = Scheduled.ConcurrentExecution.SKIP)
+    public void scheduledDataParse(){
+        Log.info("ParseDataTimer: RUNNING");
 
         try {
             List<Data> list = Data.listAll();
@@ -34,7 +39,7 @@ public class DataParser {
 
                     if (!data.parsed){
                         assertTrue(data.data_to_parse != null);
-                        DataUtil.parseUsingNodesWithScheduler(data, objectMapper);
+                        DataUtil.parseForScheduler(data, objectMapper);
                     }
 
                 } catch (Exception e) {

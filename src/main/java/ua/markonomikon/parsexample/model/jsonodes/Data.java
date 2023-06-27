@@ -1,4 +1,4 @@
-package ua.markonomikon.parsexample.model;
+package ua.markonomikon.parsexample.model.jsonodes;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
@@ -7,7 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import java.time.LocalDateTime;
 
 /**
- * entity containing basic info about the received data.
+ * ENTITY: containing basic info about the received data.
  * - String 'data_to_parse': contains received data.
  * - LocalDateTime 'received_date': date when the data was received.
  * - boolean 'parsed': true/false data is parsed.

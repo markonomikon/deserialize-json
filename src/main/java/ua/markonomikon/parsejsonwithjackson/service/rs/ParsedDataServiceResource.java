@@ -23,6 +23,10 @@ public class ParsedDataServiceResource {
      * =======================================
      */
 
+    /**
+     * GET of all ParsedData objects
+     */
+
     @GET
     @Path("/all")
     public List<ParsedData> getAllData() {

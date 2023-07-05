@@ -45,6 +45,11 @@ public class DataServiceResource{
      * =======================================
      */
 
+    /**
+     * JSON object received being put in a string and added to newly created Data object which will be used by ParseDataTimer. The timer will take
+     * the string containing json and process it to create and populate a new ParsedData object
+     */
+
     @POST
     @Path("/entry")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -60,6 +65,10 @@ public class DataServiceResource{
 
         Log.info("Persisted.");
     }
+
+    /**
+     * JSON object received being processed using json nodes. Processed data will populate the ParsedData object
+     */
 
     @POST
     @Path("/entry_no_scheduler")

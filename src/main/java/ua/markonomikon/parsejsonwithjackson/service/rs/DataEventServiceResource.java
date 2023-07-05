@@ -27,6 +27,10 @@ public class DataEventServiceResource {
      * =======================================
      */
 
+    /**
+     * JSON object received being mapped directly into DataEvent pojo and so on. Once mapper we use the dataEvent object to parse data
+     * and populate ParsedData entity
+     */
     @POST
     @Path("/entry")
     @Consumes(MediaType.APPLICATION_JSON)

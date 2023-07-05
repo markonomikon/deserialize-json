@@ -4,6 +4,8 @@ java using [Quarkus](https://quarkus.io/) framework. You can find 2 ways of dese
 
 - using [JsonNode](#jsonnode)
 - using [JsonProperty annotation](#jsonproperty)
+- [JsonNode](#json-nodes) usage in this application
+- [JsonProperty](#json-property) usage in this application
 
 ### JsonNode
 JsonNode refers to a data structure used to represent and manipulate JSON 
@@ -144,3 +146,130 @@ now we map the JSON data to Person object and persist it:
            
         person.persist();
 ```
+
+### Requests
+##### JSON property
+to test the functionality of @JsonProperty annotation's make a POST request to:
+```
+http://localhost:8080/api/json_data/entry
+```
+with the following json body example:
+```
+{
+    "object":"message",
+    "entry":
+        [
+            {
+            "id":"100253349659316",
+            "metadata":
+                [
+                    {
+                    "from":
+                        {
+                        "number":"3895412487",
+                        "name":"Jick",
+                        "surname":"Mack"
+                        },
+                    "to":
+                        {
+                        "number":"0898234769",
+                        "name":"Mick",
+                        "surname":"Jack"
+                        }
+                    }
+                ]         
+            }
+        ]
+}
+```
+what will happen is that the json will be mapped automatically into the 'DataEvent' pojo and so on:
+```
+DataEvent dataEvent = objectMapper.readValue(jsonObject, DataEvent.class);
+```
+after we'll create and populate our 'ParsedData' entity using the pojo (dataEvent) in which we mapped our json.
+
+##### JSON nodes
+to test the functionality of json nodes make a POST request to:
+```
+http://localhost:8080/api/data/entry_no_scheduler
+```
+with the following json body example:
+```
+{
+    "object":"message",
+    "entry":
+        [
+            {
+            "id":"100253349659316",
+            "metadata":
+                [
+                    {
+                    "from":
+                        {
+                        "number":"3895412487",
+                        "name":"Jick",
+                        "surname":"Mack"
+                        },
+                    "to":
+                        {
+                        "number":"0898234769",
+                        "name":"Mick",
+                        "surname":"Jack"
+                        }
+                    }
+                ]         
+            }
+        ]
+}
+```
+what will happen is that we'll pass our json with an object mapper to a method which will process it using json nodes:
+```
+JsonNode rootNode = objectMapper.readTree(jsonString);
+
+String object = rootNode.get("object").asText();
+JsonNode entryNode = rootNode.get("entry");
+
+etc...
+```
+after we'll create and populate our 'ParsedData' entity using nodes.
+
+##### Timer
+to test the functionality of a timer that processes data taken from an existing tables column, make a POST request to:
+```
+http://localhost:8080/api/data/entry
+```
+with the following json body example:
+```
+{
+    "object":"message",
+    "entry":
+        [
+            {
+            "id":"100253349659316",
+            "metadata":
+                [
+                    {
+                    "from":
+                        {
+                        "number":"3895412487",
+                        "name":"Jick",
+                        "surname":"Mack"
+                        },
+                    "to":
+                        {
+                        "number":"0898234769",
+                        "name":"Mick",
+                        "surname":"Jack"
+                        }
+                    }
+                ]         
+            }
+        ]
+}
+```
+what will happen is that we'll create and populate an entities field with our json as string. In our case we'll populate the 'data_to_parse' field of an object 
+simply called 'Data'. Once populated, with a timer we'll process the string containing our json and create & populate our 'ParsedData' entity. In the timer 
+we can use both ways of parsing we've seen before. We can parse our json using 'DataEvent' so using json property annotations, or we can parse it using json nodes, it's up to you.
+
+
+

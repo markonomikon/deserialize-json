@@ -23,7 +23,7 @@ public class DataUtil {
      */
 
     /**
-     * Method where we instance, populate and persist 'ParsedData' entity and update 'Data' entity using the Data if 'parsed' equals false.
+     * Method where we instance, populate and persist 'ParsedData' entity and update 'Data' entity, using the Data if 'parsed' equals false condition.
      * @param data
      * @param objectMapper
      */
@@ -78,7 +78,7 @@ public class DataUtil {
     }
 
     /**
-     * Method where we instance, populate and persist 'ParsedData' entity, using directly the data that we received.
+     * Method where we instance, populate and persist 'ParsedData' entity, using directly the data that we received thanks to json nodes.
      * @param jsonObject
      * @param objectMapper
      */
@@ -135,7 +135,7 @@ public class DataUtil {
      */
 
     /**
-     * Method where we instance, populate and persist 'ParsedData' entity, using 'dataEvent' into which we mapped data that we received.
+     * Method where we instance, populate and persist 'ParsedData' entity, using 'dataEvent' into which we mapped data that we received thanks to @JsonProperty.
      * @param dataEvent
      */
 

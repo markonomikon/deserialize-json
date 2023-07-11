@@ -1,0 +1,13 @@
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/service/timer/ParseDataTimer.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/service/rs/DataServiceResource.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/model/jsonproperty/Metadata.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/model/jsonproperty/From.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/model/jsonproperty/To.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/management/AppConstants.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/model/ParsedData.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/model/jsonodes/Data.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/model/jsonproperty/Entry.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/service/rs/ParsedDataServiceResource.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/service/rs/DataEventServiceResource.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/model/jsonproperty/DataEvent.java
+/home/markozvarych/ProjectsIct/parse-json-with-jackson/src/main/java/ua/markonomikon/parsejsonwithjackson/service/util/DataUtil.java

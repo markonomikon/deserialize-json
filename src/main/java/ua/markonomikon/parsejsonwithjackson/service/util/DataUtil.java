@@ -154,6 +154,20 @@ public class DataUtil {
         parsedData.persistAndFlush();
     }
 
+    @Transactional
+    public static void pa(DataEvent dataEvent){
+        // INSTANCE NEW OBJECT FOR PARSED DATA
+        ParsedData parsedData = new ParsedData();
+        parsedData.object = dataEvent.object();
+        parsedData.id = dataEvent.entry().get(0).id();
+        parsedData.sender_phone_number = dataEvent.entry().get(0).metadata().get(0).from().number();
+        parsedData.sender_name = dataEvent.entry().get(0).metadata().get(0).from().name();
+        parsedData.sender_surname = dataEvent.entry().get(0).metadata().get(0).from().surname();
+        parsedData.recipient_phone_number = dataEvent.entry().get(0).metadata().get(0).to().number();
+        parsedData.recipient_name = dataEvent.entry().get(0).metadata().get(0).to().name();
+        parsedData.recipient_surname = dataEvent.entry().get(0).metadata().get(0).to().surname();
+        parsedData.persistAndFlush();
+    }
 }
 
 

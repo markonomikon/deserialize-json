@@ -6,9 +6,13 @@ ua/markonomikon/parsejsonwithjackson/service/timer/ParseDataTimer.class
 ua/markonomikon/parsejsonwithjackson/model/jsonproperty/To.class
 ua/markonomikon/parsejsonwithjackson/model/jsonproperty/From.class
 ua/markonomikon/parsejsonwithjackson/management/AppConstants.class
+ua/markonomikon/parsejsonwithjackson/service/rs/PersonResourceService.class
+ua/markonomikon/parsejsonwithjackson/service/rs/PersonJsonbServiceResource.class
 ua/markonomikon/parsejsonwithjackson/model/jsonodes/Data.class
+ua/markonomikon/parsejsonwithjackson/model/jsonbproperty/PersonJsonb.class
 ua/markonomikon/parsejsonwithjackson/service/rs/DataServiceResource.class
 META-INF/panache-archive.marker
 ua/markonomikon/parsejsonwithjackson/model/ParsedData.class
 ua/markonomikon/parsejsonwithjackson/service/rs/DataEventServiceResource.class
 ua/markonomikon/parsejsonwithjackson/service/util/DataUtil.class
+ua/markonomikon/parsejsonwithjackson/model/jsonproperty/person/Person.class

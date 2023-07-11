@@ -66,11 +66,11 @@ public class Person {
 ```
 @Transactional
 public static void newPerson(String jsonString){
-    //create a new person instance
-    Person person = new Person();
+    //create a new personJsonb instance
+    Person personJsonb = new Person();
     
-    person.name = rootNode.get("name").asText();
-    person.surname = rootNode.get("surname").asText();
+    personJsonb.name = rootNode.get("name").asText();
+    personJsonb.surname = rootNode.get("surname").asText();
     
     //date of birth
     String day = rootNode.get("dateofbirth").get(0).get("day").asText();
@@ -79,10 +79,10 @@ public static void newPerson(String jsonString){
     
     //convert the strings into LocalDate object
     LocalDate date = LocalDate.of(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
-    person.dateofbirth = date;
+    personJsonb.dateofbirth = date;
     
-    //persist the new person
-    person.persist();
+    //persist the new personJsonb
+    personJsonb.persist();
 }
 ```
 
@@ -142,9 +142,9 @@ now we map the JSON data to Person object and persist it:
         String jsonString = "{\"name\":\"Timon\",\"surname\":\"Pumba\",\"dateofbirth\":{\"day\":\"30\","month\":\"12\",\"year\":\"1995\"}}";
         
         ObjectMapper objectMapper = new ObjectMapper();        
-        Person person = objectMapper.readValue(jsonString, Person.class);   
+        Person personJsonb = objectMapper.readValue(jsonString, Person.class);   
            
-        person.persist();
+        personJsonb.persist();
 ```
 
 ### Requests

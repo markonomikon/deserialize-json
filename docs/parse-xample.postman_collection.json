@@ -55,6 +55,54 @@
 			"response": []
 		},
 		{
+			"name": "Person",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/person/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Person (Jsonb)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/person_jsonb/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person_jsonb",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Data parse & persist TIMER",
 			"request": {
 				"method": "POST",
@@ -121,7 +169,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"object\":\"message\",\n    \"entry\":\n        [\n            {\n            \"id\":\"100253349659316\",\n            \"metadata\":\n                [\n                    {\n                    \"from\":\n                        {\n                        \"number\":\"3895412487\",\n                        \"name\":\"Black\",\n                        \"surname\":\"Jack\"\n                        },\n                    \"to\":\n                        {\n                        \"number\":\"0898234769\",\n                        \"name\":\"Mick\",\n                        \"surname\":\"Mack\"\n                        }\n                    }\n                ]         \n            }\n        ]\n}",
+					"raw": "{\n    \"object\":\"message\",\n    \"entry\":\n        [\n            {\n            \"id\":\"100253349659316\",\n            \"metadata\":\n                [\n                    {\n                    \"from\":\n                        {\n                        \"number\":\"3895412487\",\n                        \"name\":\"Jick\",\n                        \"surname\":\"Mack\"\n                        },\n                    \"to\":\n                        {\n                        \"number\":\"0898234769\",\n                        \"name\":\"Mick\",\n                        \"surname\":\"Jack\"\n                        }\n                    }\n                ]         \n            }\n        ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -139,6 +187,64 @@
 						"api",
 						"json_data",
 						"entry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Timon\",\n    \"age\":\"99\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Person (Jsonb)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Timon\",\n    \"age\":\"99\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/person_jsonb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person_jsonb"
 					]
 				}
 			},
